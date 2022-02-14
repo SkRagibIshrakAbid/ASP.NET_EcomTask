@@ -1,0 +1,23 @@
+﻿@model List<Ecom.Models.Database.Order>
+
+@{
+    ViewBag.Title = "ViewOrders";
+}
+
+<h2>ViewOrders</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Product ID</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <th>@p.Pname</th>
+            <th>@p.Pprice</th>
+            <th>@p.Pid</th>
+        </tr>
+    }
+</table>
+

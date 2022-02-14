@@ -1,0 +1,13 @@
+﻿@model Ecom.Models.Database.Product
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+<form action="/Products/Update" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" class="form-control" placeholder="Id">
+    <input type="text" name="Title" value="@Model.Name" class="form-control" placeholder="Name">
+    <input type="text" name="Description" value="@Model.Price" class="form-control" placeholder="Price">
+    <input type="submit" value="Submit" />
+</form>
+

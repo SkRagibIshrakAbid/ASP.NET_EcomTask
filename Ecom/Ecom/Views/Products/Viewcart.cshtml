@@ -1,0 +1,28 @@
+﻿@model List<Ecom.Models.Database.Product>
+
+
+@{
+    ViewBag.Title = "Viewcart";
+}
+<h2>Viewcart</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <th>@p.Name
+            <th>
+            <th>@p.Price</th>
+        </tr>
+    }
+</table>
+<form action="/Products/Order" method="post">
+    <input type="submit" value="Order" />
+</form>
+<form action="/Products/ClearCart" method="post">
+    <input type="submit" value="Clear Cart" />
+</form>
+

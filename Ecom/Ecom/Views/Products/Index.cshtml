@@ -1,0 +1,31 @@
+﻿@model List<Ecom.Models.Database.Product>
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<form action="/Products/Index" method="post">
+    <input type="text" name="Search" class="form-control" placeholder="Search">
+    <input type="submit" value="Search" />
+</form>
+
+<h2>News List</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Update</th>
+        <th>Delete</th>
+        <th>AddToCart</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <th>@p.Name</th>
+            <th>@p.Price</th>
+            <th><a href="/Products/Update/@p.Id">Update</a></th>
+            <th><a href="/Products/Delete/@p.Id">Delete</a></th>
+            <th><a href="/Products/AddToCart/@p.Id">AddToCart</a></th>
+        </tr>
+    }
+</table>
